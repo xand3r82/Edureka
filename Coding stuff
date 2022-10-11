@@ -1,5 +1,17 @@
-This is for coding of our game
-hahahaha
-We live in a society, where cheese is cheese
-Hmmmm, cheese
-I'm typing this in de desktop version!
+#This is for coding of our game
+
+extends KinematicBody2D
+
+var speed : int = 200
+var jumpForce : int = 565
+var gravity : int = 800
+
+var vel : Vector2 = Vector2()
+var grounded : bool = false
+
+onready var sprite = $sprite
+
+func _physics_process (delta):
+    vel.x = 0
+    if Input.is_action_pressed("move_left"):
+        vel.x -= speed
